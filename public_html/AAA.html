@@ -1,0 +1,231 @@
+<html lang="">
+<head>
+    <title>PYTHON PROGRAMMING FOR BEGINNERS</title>
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color:gray;
+            color: white;
+        }
+        .history {
+            margin: 0;
+            padding: 5px;
+            background-color: lightgray;
+        }
+        .b1{
+            color: whitesmoke;
+            font-family: Georgia;
+            text-decoration-color: lightslategray;
+        }
+        .b2{
+            color:black;
+        }
+        .history > h1 {
+            margin: 10px;
+            padding: 5px;
+            background-color:transparent;
+        }
+
+        header{
+            text-align: center;
+            color:whitesmoke;
+
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: darkslategrey;
+            color: white;
+        }
+        .subHistory {
+            margin: 4px;
+            font-family: Georgia;
+            background: white;
+            margin:5px;
+            padding:5px;
+        }
+        header {
+            width: 1250px;
+            height: 90px;
+            background-image: url('blue.jpeg');
+        }
+    </style>
+</head>
+<body style="background-color:powderblue;">
+
+<header>
+
+    <h2 class="b1">AAA TESTING</h2>
+</header>
+<div class="topnav">
+    <a class="active" href="index.html">INTERNET</a>
+    <a class="active" href="webwars.html">WEBWARS</a>
+    <a class="active" href="wc3.html">WC3</a>
+    <a class="active" href=http.html>HTTP</a>
+    <a class="active" href=people.html>WWW</a>
+    <a class="active" href="seperationofconcern.html">SEPERATION OF CONCERNS</a>
+    <a class="active" href="AAA.html">AAA TESTING</a>
+    <a class="active" href="OOPS.html">OOPS CONCEPTS</a>
+    <a class="active" href="pythontips.html">PYLINT</a>
+</div>
+
+<article class=OOPS>
+    <img src="aaaf.jpg" alt="sitebackgroundimage" style="width:1245px;height:500px;">
+    <p class="b2">What is AAA TESTING?</p>
+    <p>
+        Arrange/Act/Assert (AAA) is a pattern for arranging and formatting code in Unit Test methods. It is a best practice to author your tests in more natural and convenient way. The pattern focuses each test on a single action.
+       <li> Arrange : setup the testing objects and prepare the prerequisites for your test.</li>
+       <li>Act : perform the actual work of the test.</li>
+       <li>Assert : verify the result.</li>
+        A test is a procedure that exercises a behavior to determine if the behavior functions correctly.There are several different kinds of tests, like unit tests, integration tests, or end-to-end tests, but all functional tests do the same basic thing: they try something and report PASS or FAIL.
+    </p>
+</article>
+<article class="subHistory">
+    <ul>
+        <li>DEFINITION:</li>
+        <p>The definition of the test function. </p>
+        <h1>EXAMPLE:</h1>
+        <p><b>def test_reverse():</b></p>
+        <p>GUIDELINES</p>
+        <p>
+        <li>Name your function something descriptive because the function name will be shown when the test fails in Pytest output.</li>
+            <li>Good test method names can make docstrings redundant in simple tests (thanks Adam!).</li></p>
+    </ul>
+
+</article>
+<article class="subHistory">
+    <ul>
+        <li>DOC STRING:</li>
+        <p>An optional short single line statement about the behaviour under test. </p>
+        <h1>EXAMPLE:</h1>
+        <p><b>"""
+            list.reverse inverts the order of items in a list, in place
+            """</b></p>
+        <p>GUIDELINES</p>
+        <p>
+            Docstrings are not part of the AAA pattern. Consider if your test needs one or if you are best to omit it for simplicity.
+
+            If you do include a docstring, then I recommend that you:
+
+            Follow the existing Docstring style of your project so that the tests are consistent with the code base you are testing.
+
+            Keep the language positive - state clearly what the expected behaviour is. Positive docstrings read similar to:<br>
+
+            X does Y when Z<br>
+
+            Or<br>
+
+            Given Z, then X does Y<br>
+
+            Be cautious when using any uncertain language in the docstring and follow the mantra Explicit is better than implicit (PEP20)
+
+           <br> Words like should and if introduce uncertainty. For example:<br>
+
+            X should do Y if Z<br>
+
+            In this case the reader could be left with questions. Is X doing it right at the moment? Is this a TODO note? Is this a test for an expected failure?
+
+            In a similar vein, avoid future case.<br>
+
+            X will do Y when Z<br>
+
+            Again, this reads like a TODO.</p>
+    </ul>
+
+</article>
+<article class="subHistory">
+    <ul>
+        <li>ARRANGE:</li>
+        <p>The block of code that sets up the conditions for the test action.</p>
+        <h1>EXAMPLE:</h1>
+        <p></p><b>greek = ['alpha', 'beta', 'gamma', 'delta']</b></p>
+        <p>GUIDELINES</p>
+        <p>
+            Use a single block of code with no empty lines.
+            Do not use assert in the Arrange block. If you need to make an assertion about your arrangement, then this is a smell that your arrangement is too complicated and should be extracted to a fixture or setup function and tested in its own right.
+            Only prepare non-deterministic results not available after action.
+            The arrange section should not require comments. If you have a large arrangement in your tests which is complex enough to require detailed comments then consider:
+            Extracting the comments into a multi-line docstring.
+            Extracting the arrangement code into a fixture and testing that the fixture is establishing the expected conditions as previously mentioned.</p>
+    </ul>
+
+</article>
+<article class="subHistory">
+    <ul>
+        <li>ACT:</li>
+        <p>The line of code where the Action is taken on the SUT.</p>
+        <h1>EXAMPLE:</h1>
+        <p><b>result = greek.reverse()</b></p>
+        <p>GUIDELINES</p>
+        <p>
+            Start every Action line with result =.
+
+            This makes it easier to distinguish test actions and means you can avoid the hardest job in programming: naming. When every result is called result, then you do not need to waste brain power wondering if it should be item = or response = etc. An added benefit is that you can find test actions easily with a tool like grep.
+
+            Even when there is no result from the action, capture it with result = and then assert result is None. In this way, the SUT behaviour is pinned.
+
+            If you struggle to write a single line action, then consider extracting some of that code into your arrangement.
+
+            The action can be wrapped in with  raises for expected exceptions. In this case your action will be two lines surrounded by empty lines.</p>
+    </ul>
+
+</article>
+<article class="subHistory">
+    <ul>
+        <li>ASSERT:</li>
+        <p>The block of code that performs the assertions on the state of the SUT after the action.</p>
+        <h1>EXAMPLE:</h1>
+        <p><b>assert result is None
+            assert greek == ['delta', 'gamma', 'beta', 'alpha']</b></p><p>GUIDELINES</p>
+        <p>
+            Use a single block of code with no empty lines.
+            First test result, then side effects.
+            Limit the actions that you make in this block. Ideally, no actions should happen, but that is not always possible.
+            Use simple blocks of assertions. If you find that you are repeatedly writing the same code to extract information from the SUT and perform assertions on it, then consider extracting an assertion helper.
+            The final test</p>
+    </ul>
+
+</article>
+<article class="subHistory">
+    <ul>
+        <li>FINAL TEST:</li>
+        <h1>EXAMPLE:</h1>
+        <p><b>def test_reverse():<br>
+            """<br>
+            list.reverse inverts the order of items in a list, in place<br>
+            """<br>
+            greek = ['alpha', 'beta', 'gamma', 'delta']<br>
+
+            result = greek.reverse()<br>
+
+            assert result is None<br>
+            assert greek == ['delta', 'gamma', 'beta', 'alpha']</b></p>
+    </ul>
+
+</article>
+<footer>
+    <p>AAA TESTING<br>
+        <a href="gk39@njit:edu">gk39@njit.edu</a></p>
+</footer>
+
+</body>
+</html>
